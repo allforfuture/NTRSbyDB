@@ -18,7 +18,7 @@ namespace NTRSbyDB.Info
             internal string result { get; set; }
 
             internal string value { get; set; }
-            internal string bin { get; set; }
+            internal string type { get; set; }
         }
     }
    
@@ -34,15 +34,8 @@ namespace NTRSbyDB.Info
             TrayList.Tray tray = new TrayList.Tray() { sn = sn };
             if (dt.Rows.Count > 0)
             {
-                //tray.process_at = dt.Rows[0]["process_at"].ToString();
-                //tray.datatype_id = dt.Rows[0]["datatype_id"].ToString();
-                //tray.partsserial_cd = dt.Rows[0]["partsserial_cd"].ToString();
-                //if (Info.TrayList.trayList.Count == 0)
-                //{ tray.result = "0"; }
-                //else
-                //{ tray.result = Info.TrayList.trayList[0].partsserial_cd == tray.partsserial_cd ? "0" : "1"; }
-                tray.value= dt.Rows[0]["avg"].ToString();
-                tray.bin= dt.Rows[0]["case"].ToString();
+                tray.value= dt.Rows[0]["value"].ToString();
+                tray.type= dt.Rows[0]["type"].ToString();
                 return tray;
             }
             else

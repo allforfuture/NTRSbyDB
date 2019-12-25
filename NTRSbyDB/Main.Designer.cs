@@ -279,7 +279,7 @@
             this.txtBinA.ReadOnly = true;
             this.txtBinA.Size = new System.Drawing.Size(257, 33);
             this.txtBinA.TabIndex = 35;
-            this.txtBinA.Text = "BinA:</=3.67mm";
+            this.txtBinA.Text = "(Type1)";
             // 
             // txtBinB
             // 
@@ -290,7 +290,7 @@
             this.txtBinB.ReadOnly = true;
             this.txtBinB.Size = new System.Drawing.Size(257, 33);
             this.txtBinB.TabIndex = 35;
-            this.txtBinB.Text = "BinB:>3.67mm </=3.69mm";
+            this.txtBinB.Text = "(Type2)";
             // 
             // txtBinC
             // 
@@ -301,7 +301,7 @@
             this.txtBinC.ReadOnly = true;
             this.txtBinC.Size = new System.Drawing.Size(257, 33);
             this.txtBinC.TabIndex = 35;
-            this.txtBinC.Text = "BinC:>3.69mm";
+            this.txtBinC.Text = "(Type3)";
             // 
             // txtNull
             // 

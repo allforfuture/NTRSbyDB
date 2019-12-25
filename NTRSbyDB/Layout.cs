@@ -93,18 +93,18 @@ namespace NTRSbyDB
             //        strColor = Color.Black;
             //        break;
             //}
-            switch (trayInfo.bin)
+            switch (trayInfo.type)
             {
-                case "BinA":
+                case "Type1":
                     //panelColor = ColorTranslator.FromHtml("#008000");
                     panelColor = Color.IndianRed;
                     strColor = Color.Black;
                     break;
-                case "BinB":
+                case "Type2":
                     panelColor = Color.DodgerBlue;
                     strColor = Color.Black;
                     break;
-                case "BinC":
+                case "Type3":
                     panelColor = Color.Green;
                     strColor = Color.Black;
                     break;
@@ -119,7 +119,7 @@ namespace NTRSbyDB
             //panel.AutoSize = true;
 
             Label l1 = new Label();
-            l1.Text = trayInfo.bin;//l1.Text = trayInfo.result == "0" ? "PASS" : "FAIL";
+            l1.Text = trayInfo.type;//l1.Text = trayInfo.result == "0" ? "PASS" : "FAIL";
             //l1.Font = new Font("微软雅黑", 12, FontStyle.Bold);
             l1.Font = new Font("微软雅黑", l1.Font.Size, FontStyle.Bold);
             l1.ForeColor = strColor;

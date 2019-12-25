@@ -231,7 +231,7 @@ namespace NTRSbyDB
             #endregion
 
             #region 数据显示
-            txtResult.Text = Info.TrayList.trayList[Info.TrayList.trayList.Count - 1].bin;
+            txtResult.Text = Info.TrayList.trayList[Info.TrayList.trayList.Count - 1].type;
 
             //txtDetail.Text = string.Format("Oven Info:\r\n{0}sec\r\n{1}\r\n{2}",
             //    Info.Oven.roastTime, Info.Oven.start, Info.Oven.end);
