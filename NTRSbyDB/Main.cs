@@ -85,10 +85,18 @@ namespace NTRSbyDB
             #region 布局
             #region 
             string[] detail = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"DisplayDetail").Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            txtBinA.Text = detail[0];
-            txtBinB.Text = detail[1];
-            txtBinC.Text = detail[2];
-            txtNull.Text = detail[3];
+            txtBinA.Text = detail[0].Split(',')[0];
+            txtBinA.ForeColor = ColorTranslator.FromHtml(detail[0].Split(',')[1]);
+            txtBinA.BackColor= ColorTranslator.FromHtml(detail[0].Split(',')[2]);
+            txtBinB.Text = detail[1].Split(',')[0];
+            txtBinB.ForeColor = ColorTranslator.FromHtml(detail[1].Split(',')[1]);
+            txtBinB.BackColor = ColorTranslator.FromHtml(detail[1].Split(',')[2]);
+            txtBinC.Text = detail[2].Split(',')[0];
+            txtBinC.ForeColor = ColorTranslator.FromHtml(detail[2].Split(',')[1]);
+            txtBinC.BackColor = ColorTranslator.FromHtml(detail[2].Split(',')[2]);
+            txtNull.Text = detail[3].Split(',')[0];
+            txtNull.ForeColor = ColorTranslator.FromHtml(detail[3].Split(',')[1]);
+            txtNull.BackColor = ColorTranslator.FromHtml(detail[3].Split(',')[2]);
             #endregion
             #region TlpLayout
             TlpLayout.RowCount = NTRSbyDB.Layout.row;

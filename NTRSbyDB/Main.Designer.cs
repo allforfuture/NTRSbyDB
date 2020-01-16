@@ -373,10 +373,10 @@
         private System.Windows.Forms.TableLayoutPanel TlpLayout;
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.TextBox txtDisplaySN;
-        private System.Windows.Forms.TextBox txtBinA;
-        private System.Windows.Forms.TextBox txtBinB;
-        private System.Windows.Forms.TextBox txtBinC;
-        private System.Windows.Forms.TextBox txtNull;
+        internal System.Windows.Forms.TextBox txtBinA;
+        internal System.Windows.Forms.TextBox txtBinB;
+        internal System.Windows.Forms.TextBox txtBinC;
+        internal System.Windows.Forms.TextBox txtNull;
     }
 }
 

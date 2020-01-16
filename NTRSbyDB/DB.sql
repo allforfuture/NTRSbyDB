@@ -1,9 +1,14 @@
-﻿SELECT count (*) AS value,
+﻿select inspect_text AS value,
 CASE
- WHEN count (*) = 0 THEN 'Type1'
- ELSE 'Type2'
+ WHEN  inspect_text::float  <=0.2 THEN 'Bin A'
+ WHEN  inspect_text::float  >0.2 and inspect_text::float  <=0.25 THEN 'Bin B'
+ ELSE 'Bin C'
 END AS type
-FROM t_insp_kk10 a
-JOIN m_process b ON a.proc_uuid  =b.proc_uuid
-WHERE b.process_cd = 'TRAQ1'
-AND a.serial_cd = '{0}'
+from t_data_ee149 data
+join t_insp_ee149 insp on data.insp_seq=insp.insp_seq
+where insp.proc_uuid in
+(select proc_uuid from m_process
+where process_cd='AE-7')
+and insp.serial_cd='{0}'
+order by data.process_at desc
+limit 1

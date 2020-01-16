@@ -77,42 +77,27 @@ namespace NTRSbyDB
         {
             Color panelColor = new Color();
             Color strColor = new Color();
-            //switch (trayInfo.result)
-            //{
-            //    case "0":
-            //        //panelColor = ColorTranslator.FromHtml("#008000");
-            //        panelColor = Color.Green;
-            //        strColor = Color.Black;
-            //        break;
-            //    case "1":
-            //        panelColor = Color.Red;
-            //        strColor = Color.Black;
-            //        break;
-            //    default:
-            //        panelColor = Color.Red;
-            //        strColor = Color.Black;
-            //        break;
-            //}
-            switch (trayInfo.type)
+            if (trayInfo.type == Main.main.txtBinA.Text)
             {
-                case "Type1":
-                    //panelColor = ColorTranslator.FromHtml("#008000");
-                    panelColor = Color.IndianRed;
-                    strColor = Color.Black;
-                    break;
-                case "Type2":
-                    panelColor = Color.DodgerBlue;
-                    strColor = Color.Black;
-                    break;
-                case "Type3":
-                    panelColor = Color.Green;
-                    strColor = Color.Black;
-                    break;
-                default:
-                    panelColor = Color.Yellow;
-                    strColor = Color.Black;
-                    break;
+                panelColor = Main.main.txtBinA.BackColor;
+                strColor = Main.main.txtBinA.ForeColor;
             }
+            else if (trayInfo.type == Main.main.txtBinB.Text)
+            {
+                panelColor = Main.main.txtBinB.BackColor;
+                strColor = Main.main.txtBinB.ForeColor;
+            }
+            else if (trayInfo.type == Main.main.txtBinC.Text)
+            {
+                panelColor = Main.main.txtBinC.BackColor;
+                strColor = Main.main.txtBinC.ForeColor;
+            }
+            else
+            {
+                panelColor = Main.main.txtNull.BackColor;
+                strColor = Main.main.txtNull.ForeColor;
+            }
+
             Panel panel = new Panel();
             panel.Dock = DockStyle.Fill;
             panel.BackColor = panelColor;
