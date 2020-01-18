@@ -15,6 +15,7 @@ WHERE insp.proc_uuid IN
 (SELECT proc_uuid FROM m_process
 WHERE process_cd='AE-7')
 AND insp.serial_cd='{0}'
+AND data.inspect_cd='FLATNESS'
 ORDER BY data.process_at DESC
 LIMIT 1)
 
