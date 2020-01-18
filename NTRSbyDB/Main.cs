@@ -132,7 +132,7 @@ namespace NTRSbyDB
             //AllInfo.SNlist = new List<AllInfo.SNinfo>();
             Info.TrayList.trayList = new List<Info.TrayList.Tray>();
             //数据显示
-            txtSN.Text=txtDisplaySN.Text = txtResult.Text = txtDetail.Text = string.Empty;
+            txtSN.Text = txtResult.Text = txtDetail.Text = string.Empty;
             txtSN.Focus();
         }
 
