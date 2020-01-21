@@ -55,7 +55,7 @@
             this.txtBinA = new System.Windows.Forms.TextBox();
             this.txtBinB = new System.Windows.Forms.TextBox();
             this.txtBinC = new System.Windows.Forms.TextBox();
-            this.txtNull = new System.Windows.Forms.TextBox();
+            this.txtNG = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.GrpTest.SuspendLayout();
             this.SuspendLayout();
@@ -277,7 +277,7 @@
             this.txtBinA.Location = new System.Drawing.Point(9, 246);
             this.txtBinA.Name = "txtBinA";
             this.txtBinA.ReadOnly = true;
-            this.txtBinA.Size = new System.Drawing.Size(257, 33);
+            this.txtBinA.Size = new System.Drawing.Size(245, 33);
             this.txtBinA.TabIndex = 35;
             this.txtBinA.Text = "(Type1)";
             // 
@@ -288,7 +288,7 @@
             this.txtBinB.Location = new System.Drawing.Point(9, 302);
             this.txtBinB.Name = "txtBinB";
             this.txtBinB.ReadOnly = true;
-            this.txtBinB.Size = new System.Drawing.Size(257, 33);
+            this.txtBinB.Size = new System.Drawing.Size(245, 33);
             this.txtBinB.TabIndex = 35;
             this.txtBinB.Text = "(Type2)";
             // 
@@ -299,27 +299,27 @@
             this.txtBinC.Location = new System.Drawing.Point(9, 358);
             this.txtBinC.Name = "txtBinC";
             this.txtBinC.ReadOnly = true;
-            this.txtBinC.Size = new System.Drawing.Size(257, 33);
+            this.txtBinC.Size = new System.Drawing.Size(245, 33);
             this.txtBinC.TabIndex = 35;
             this.txtBinC.Text = "(Type3)";
             // 
-            // txtNull
+            // txtNG
             // 
-            this.txtNull.BackColor = System.Drawing.Color.Yellow;
-            this.txtNull.Font = new System.Drawing.Font("微软雅黑", 14.25F);
-            this.txtNull.Location = new System.Drawing.Point(9, 414);
-            this.txtNull.Name = "txtNull";
-            this.txtNull.ReadOnly = true;
-            this.txtNull.Size = new System.Drawing.Size(257, 33);
-            this.txtNull.TabIndex = 36;
-            this.txtNull.Text = "(NULL)";
+            this.txtNG.BackColor = System.Drawing.Color.Yellow;
+            this.txtNG.Font = new System.Drawing.Font("微软雅黑", 14.25F);
+            this.txtNG.Location = new System.Drawing.Point(9, 414);
+            this.txtNG.Name = "txtNG";
+            this.txtNG.ReadOnly = true;
+            this.txtNG.Size = new System.Drawing.Size(245, 33);
+            this.txtNG.TabIndex = 36;
+            this.txtNG.Text = "(NG)";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 631);
-            this.Controls.Add(this.txtNull);
+            this.Controls.Add(this.txtNG);
             this.Controls.Add(this.txtBinC);
             this.Controls.Add(this.txtBinB);
             this.Controls.Add(this.txtBinA);
@@ -339,7 +339,6 @@
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "NTRSbyDB";
-            this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.GrpTest.ResumeLayout(false);
@@ -376,7 +375,7 @@
         internal System.Windows.Forms.TextBox txtBinA;
         internal System.Windows.Forms.TextBox txtBinB;
         internal System.Windows.Forms.TextBox txtBinC;
-        internal System.Windows.Forms.TextBox txtNull;
+        internal System.Windows.Forms.TextBox txtNG;
     }
 }
 

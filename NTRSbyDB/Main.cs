@@ -94,9 +94,9 @@ namespace NTRSbyDB
             txtBinC.Text = detail[2].Split(',')[0];
             txtBinC.ForeColor = ColorTranslator.FromHtml(detail[2].Split(',')[1]);
             txtBinC.BackColor = ColorTranslator.FromHtml(detail[2].Split(',')[2]);
-            txtNull.Text = detail[3].Split(',')[0];
-            txtNull.ForeColor = ColorTranslator.FromHtml(detail[3].Split(',')[1]);
-            txtNull.BackColor = ColorTranslator.FromHtml(detail[3].Split(',')[2]);
+            txtNG.Text = detail[3].Split(',')[0];
+            txtNG.ForeColor = ColorTranslator.FromHtml(detail[3].Split(',')[1]);
+            txtNG.BackColor = ColorTranslator.FromHtml(detail[3].Split(',')[2]);
             #endregion
             #region TlpLayout
             TlpLayout.RowCount = NTRSbyDB.Layout.row;
@@ -139,35 +139,16 @@ namespace NTRSbyDB
         string saveLast;
         private void SptReceiveOrSend_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
-            //MessageBox.Show("串口1已触发DataReceived");
-            //byte[] byteRead = new byte[SptReceiveOrSend.BytesToRead];
-            //SptReceiveOrSend.Read(byteRead, 0, byteRead.Length);
-            //string dataRe = Encoding.Default.GetString(byteRead);
-
             byte[] readBuffer = new byte[SptReceiveOrSend.BytesToRead];
             SptReceiveOrSend.Read(readBuffer, 0, readBuffer.Length);
             string indata = Encoding.Default.GetString(readBuffer);
             MessageShow(ChkTest_ShowMessage.Checked, "串口1接收到" + readBuffer.Length + "字节Byte:\r\n" + indata);
-            //SerialPort sp = (SerialPort)sender;
-            #region 改成readBuffer
-            //int count = sp.BytesToRead;
-            //byte[] readBuffer = new byte[count];
-            //sp.Read(readBuffer, 0, count);
-            //string indata = Encoding.Default.GetString(readBuffer);
-            #endregion
-            //string indata = sp.ReadExisting();
-            //MessageBox.Show("串口1接收到:\r\n" + indata);
-
-            //MessageBox.Show("从串口接收到:\r\n"+indata);
             //要是不能接收到完整的记录就存起来(最后一位是终止符",")
-            //if (indata.Substring(indata.Length - 1, 1) != ",")
-
             if (indata.Substring(indata.Length - 1, 1) != Port.identifier)
             {
                 saveLast += indata;
                 return;
             }
-            //MessageBox.Show("action");
             indata = saveLast + indata;
             saveLast = "";
             string[] SN = indata.Split(new string[] { Port.identifier }, StringSplitOptions.RemoveEmptyEntries);
@@ -175,9 +156,6 @@ namespace NTRSbyDB
             {
 
                 string sn = str.Replace("\r", string.Empty).Replace("\n", string.Empty);
-                //string sn = str.Replace("\r", string.Empty).Replace("\n", string.Empty)
-                //    .Replace("", string.Empty).Replace("", string.Empty);
-                //if (sn == "") continue;
                 if (sn != "ERROR" && !SN.Contains("+") && sn.Length != 17)
                 {
                     Log.WriteError(sn);
@@ -208,10 +186,6 @@ namespace NTRSbyDB
             {
                 if (sn == var.sn && sn != "ERROR")
                 {
-                    //txtResult.Text = "FAIL";
-                    //txtDetail.Text = "Duplicate SN";
-                    //txtDetail.ForeColor = Color.Red;
-                    //txtDetail.BackColor = txtDetail.BackColor;
                     txtResult.Text = "DUPLICATE";
                     return;
                 }
@@ -386,23 +360,8 @@ namespace NTRSbyDB
         private void BtnPath_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(AppDomain.CurrentDomain.BaseDirectory);
-            //MessageBox.Show(AppDomain.CurrentDomain.BaseDirectory);
         }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-            //TxtDetail.Parent = this;
-            //Color c = TxtDetail.BackColor;
-            //TxtDetail.ReadOnly = true;
-            //TxtDetail.BackColor = c;
-
-
-
-            //txtDetail.ForeColor = Color.Red;
-            //txtDetail.BackColor = Color.Green;
-        }
-
-
+        
         private void TxtSN_KeyUp(object sender, KeyEventArgs e)
         {
             //if (e.KeyCode == Keys.Return || txtSN.TextLength == 17)
