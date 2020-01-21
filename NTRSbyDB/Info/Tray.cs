@@ -12,13 +12,11 @@ namespace NTRSbyDB.Info
         public class Tray
         {
             internal string sn { get; set; }
-            internal string process_at { get; set; }
-            internal string datatype_id { get; set; }
-            internal string partsserial_cd { get; set; }
             internal string result { get; set; }
 
             internal string value { get; set; }
             internal string type { get; set; }
+            internal string message { get; set; }
         }
     }
    
@@ -36,10 +34,12 @@ namespace NTRSbyDB.Info
             {
                 tray.value= dt.Rows[0]["value"].ToString();
                 tray.type= dt.Rows[0]["type"].ToString();
+                try { tray.message = dt.Rows[0]["message"].ToString(); } catch { }
                 return tray;
             }
             else
             {
+                tray.type ="NULL";
                 tray.result = "1";
                 return tray;
             }

@@ -50,7 +50,7 @@ namespace NTRSbyDB
             //CheckForIllegalCrossThreadCalls = false;
             main = this;
             InitializeComponent();
-            
+
             //显示版本号
             this.Text += "_" + Application.ProductVersion.ToString();
             //新建文件夹（log、pqm、sum）
@@ -83,20 +83,20 @@ namespace NTRSbyDB
                 if (!Regedit.verifyTrajectory()) { goto checkTrajectory; }
             }
             #region 布局
-            #region 
-            string[] detail = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"DisplayDetail").Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            txtBinA.Text = detail[0].Split(',')[0];
-            txtBinA.ForeColor = ColorTranslator.FromHtml(detail[0].Split(',')[1]);
-            txtBinA.BackColor= ColorTranslator.FromHtml(detail[0].Split(',')[2]);
-            txtBinB.Text = detail[1].Split(',')[0];
-            txtBinB.ForeColor = ColorTranslator.FromHtml(detail[1].Split(',')[1]);
-            txtBinB.BackColor = ColorTranslator.FromHtml(detail[1].Split(',')[2]);
-            txtBinC.Text = detail[2].Split(',')[0];
-            txtBinC.ForeColor = ColorTranslator.FromHtml(detail[2].Split(',')[1]);
-            txtBinC.BackColor = ColorTranslator.FromHtml(detail[2].Split(',')[2]);
-            txtNG.Text = detail[3].Split(',')[0];
-            txtNG.ForeColor = ColorTranslator.FromHtml(detail[3].Split(',')[1]);
-            txtNG.BackColor = ColorTranslator.FromHtml(detail[3].Split(',')[2]);
+            #region
+            string[] items = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"DisplayDetail").Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            int y = 0;
+            foreach (string item in items)
+            {
+                y += 40;
+                string[] detail = item.Split(',');
+                TextBox txt = new TextBox() { Size = new Size(245, 33) };
+                txt.Location = new Point(15, -15 + y);
+                txt.Text = detail[0];
+                txt.ForeColor = ColorTranslator.FromHtml(detail[1]);
+                txt.BackColor = ColorTranslator.FromHtml(detail[2]);
+                gbDetail.Controls.Add(txt);
+            }
             #endregion
             #region TlpLayout
             TlpLayout.RowCount = NTRSbyDB.Layout.row;
@@ -132,7 +132,7 @@ namespace NTRSbyDB
             //AllInfo.SNlist = new List<AllInfo.SNinfo>();
             Info.TrayList.trayList = new List<Info.TrayList.Tray>();
             //数据显示
-            txtSN.Text = txtResult.Text = txtDetail.Text = string.Empty;
+            txtSN.Text = txtResult.Text = lblMessage.Text = string.Empty;
             txtSN.Focus();
         }
 
@@ -169,8 +169,8 @@ namespace NTRSbyDB
 
         void Action(string sn)
         {
+            lblMessage.Text = "";
             txtDisplaySN.Text = sn;            
-            txtDetail.ForeColor = Color.Black;
             txtSN.Text = "";
             txtSN.SelectAll();
             Application.DoEvents();
@@ -232,7 +232,7 @@ namespace NTRSbyDB
             //}
             #endregion
             //写log
-            Log.WriteLog(txtDisplaySN.Text, txtDetail.Text, txtResult.Text);
+            Log.WriteLog(txtDisplaySN.Text, lblMessage.Text, txtResult.Text);
             //非"MISS"写csv
             //if (txtResult.Text != "MISS")
             //{

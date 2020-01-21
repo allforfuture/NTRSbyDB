@@ -18,34 +18,19 @@ namespace NTRSbyDB
         
         public static Panel paint(Info.TrayList.Tray trayInfo)
         {
+            if(trayInfo.message!=null)
+                Main.main.lblMessage.Text = trayInfo.message;
             Color panelColor = new Color();
             Color strColor = new Color();
-            if (trayInfo.type == Main.main.txtBinA.Text)
+            foreach (Control control in Main.main.gbDetail.Controls)
             {
-                panelColor = Main.main.txtBinA.BackColor;
-                strColor = Main.main.txtBinA.ForeColor;
+                if (trayInfo.type == control.Text)
+                {
+                    panelColor = control.BackColor;
+                    strColor = control.ForeColor;
+                    break;
+                }
             }
-            else if (trayInfo.type == Main.main.txtBinB.Text)
-            {
-                panelColor = Main.main.txtBinB.BackColor;
-                strColor = Main.main.txtBinB.ForeColor;
-            }
-            else if (trayInfo.type == Main.main.txtBinC.Text)
-            {
-                panelColor = Main.main.txtBinC.BackColor;
-                strColor = Main.main.txtBinC.ForeColor;
-            }
-            else if (trayInfo.type == Main.main.txtNG.Text)
-            {
-                panelColor = Main.main.txtNG.BackColor;
-                strColor = Main.main.txtNG.ForeColor;
-            }
-            else
-            {
-                panelColor = ColorTranslator.FromHtml("#FFFF00");
-                strColor = ColorTranslator.FromHtml("#000000");
-            }
-
             Panel panel = new Panel();
             panel.Dock = DockStyle.Fill;
             panel.BackColor = panelColor;
