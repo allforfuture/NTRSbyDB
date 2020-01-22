@@ -24,7 +24,7 @@ namespace NTRSbyDB
             Color strColor = new Color();
             foreach (Control control in Main.main.gbDetail.Controls)
             {
-                if (trayInfo.type == control.Text)
+                if ((trayInfo.type == null ? "" : trayInfo.type) == control.Text)
                 {
                     panelColor = control.BackColor;
                     strColor = control.ForeColor;

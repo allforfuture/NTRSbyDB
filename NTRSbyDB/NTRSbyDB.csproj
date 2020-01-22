@@ -113,7 +113,6 @@
   <ItemGroup>
     <Compile Include="DBFactory.cs" />
     <Compile Include="Document.cs" />
-    <Compile Include="Info\Oven.cs" />
     <Compile Include="Info\Tray.cs" />
     <Compile Include="Layout.cs" />
     <Compile Include="Oven.cs" />
@@ -175,13 +174,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSV_Format.txt" />
     <Content Include="DB.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="DisplayDetail">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="Info\ee149的AE-1和AE-1_DT3实例.txt" />
+    <Content Include="Info\dd305的AE-1、AE-1_DT2和AE-1_DT3实例.txt" />
+    <Content Include="Info\ee149的AE-1和AE-7实例.txt" />
     <Content Include="Oven.ico" />
   </ItemGroup>
   <ItemGroup>

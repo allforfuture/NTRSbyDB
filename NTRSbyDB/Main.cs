@@ -214,30 +214,9 @@ namespace NTRSbyDB
 
             #region 数据显示
             txtResult.Text = Info.TrayList.trayList[Info.TrayList.trayList.Count - 1].type;
-
-            //txtDetail.Text = string.Format("Oven Info:\r\n{0}sec\r\n{1}\r\n{2}",
-            //    Info.Oven.roastTime, Info.Oven.start, Info.Oven.end);
-            //if (Info.TrayList.trayList[Info.TrayList.trayList.Count - 1].partsserial_cd == null)
-            //{
-            //    txtDetail.Text += "\r\n\r\nTray Info:\r\nNo tray data in database";
-            //    txtDetail.ForeColor = Color.Red;
-            //    txtDetail.BackColor = txtDetail.BackColor;
-            //}
-            //else
-            //{
-            //    txtDetail.Text += string.Format("\r\n\r\nTray Info:\r\n{0}\r\n{1}\r\n{2}",
-            //        Info.TrayList.trayList[Info.TrayList.trayList.Count - 1].process_at,
-            //        Info.TrayList.trayList[Info.TrayList.trayList.Count - 1].datatype_id,
-            //        Info.TrayList.trayList[Info.TrayList.trayList.Count - 1].partsserial_cd);
-            //}
             #endregion
             //写log
             Log.WriteLog(txtDisplaySN.Text, lblMessage.Text, txtResult.Text);
-            //非"MISS"写csv
-            //if (txtResult.Text != "MISS")
-            //{
-            //    Pqm.WriteCSV(Info.TrayList.trayList[Info.TrayList.trayList.Count - 1]);
-            //}
             sequence++;
         }
 

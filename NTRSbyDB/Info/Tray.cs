@@ -12,7 +12,6 @@ namespace NTRSbyDB.Info
         public class Tray
         {
             internal string sn { get; set; }
-            internal string result { get; set; }
 
             internal string value { get; set; }
             internal string type { get; set; }
@@ -39,8 +38,6 @@ namespace NTRSbyDB.Info
             }
             else
             {
-                tray.type ="NULL";
-                tray.result = "1";
                 return tray;
             }
         }
