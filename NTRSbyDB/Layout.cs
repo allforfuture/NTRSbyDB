@@ -43,14 +43,14 @@ namespace NTRSbyDB
             l1.ForeColor = strColor;
             Label l2 = new Label();
             //绝对位置change动态位置
-            l2.Location = new Point(0, 50);
+            l2.Location = new Point(0, 70);
             l2.Text = Regedit.Trajectory[Info.TrayList.trayList.Count - 1];
             l2.ForeColor = strColor;
             Label l3 = new Label();
             l3.BringToFront();
             //l3.AutoSize = true;
             l3.Width = (Main.TlpLayout_Width / Convert.ToInt16(System.Configuration.ConfigurationManager.AppSettings["col"])) - 10;
-            l3.Height = 24;//可以显示2行字
+            l3.Height = 48;//可以显示2行字
             l3.Location = new Point(0, 20);
             l3.ForeColor = strColor;
             panel.Controls.Add(l3);

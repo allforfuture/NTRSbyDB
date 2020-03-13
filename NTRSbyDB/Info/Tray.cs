@@ -31,9 +31,9 @@ namespace NTRSbyDB.Info
             TrayList.Tray tray = new TrayList.Tray() { sn = sn };
             if (dt.Rows.Count > 0)
             {
-                tray.value= dt.Rows[0]["value"].ToString();
-                tray.type= dt.Rows[0]["type"].ToString();
-                try { tray.message = dt.Rows[0]["message"].ToString(); } catch { }
+                tray.value= dt.Rows[0]["data_value"].ToString();
+                tray.type= dt.Rows[0]["data_type"].ToString();
+                try { tray.message = dt.Rows[0]["data_message"].ToString(); } catch { }
                 return tray;
             }
             else

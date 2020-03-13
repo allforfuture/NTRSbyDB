@@ -95,6 +95,7 @@
             this.txtSN.Name = "txtSN";
             this.txtSN.Size = new System.Drawing.Size(270, 21);
             this.txtSN.TabIndex = 17;
+            this.txtSN.Text = "C4879398A1D000003";
             this.txtSN.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtSN_KeyUp);
             // 
             // BtnTest
@@ -242,10 +243,10 @@
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Font = new System.Drawing.Font("微软雅黑", 14.25F);
+            this.lblMessage.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblMessage.Location = new System.Drawing.Point(6, 480);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 25);
+            this.lblMessage.Size = new System.Drawing.Size(0, 21);
             this.lblMessage.TabIndex = 37;
             // 
             // TlpLayout
