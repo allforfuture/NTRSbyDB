@@ -180,18 +180,13 @@ namespace NTRSbyDB
             if (!sn.Contains("ERROR"))
                 sn = sn.Substring(0, 17);
 
-
-            #region SN检查：是否重复
-            foreach (Info.TrayList.Tray var in Info.TrayList.trayList)
+            string errMessage = "";
+            if (!new CheckSN().IsPass(sn, ref errMessage))
             {
-                if (sn == var.sn && sn != "ERROR")
-                {
-                    txtResult.Text = "DUPLICATE";
-                    return;
-                }
+                txtResult.Text = errMessage;
+                return;
             }
-            #endregion
-            
+
             #region 第一个tray检查
             Info.TrayList.Tray tray = Info.DB.GetTrayInfo(sn);
             Info.TrayList.trayList.Add(tray);

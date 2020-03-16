@@ -95,7 +95,6 @@
             this.txtSN.Name = "txtSN";
             this.txtSN.Size = new System.Drawing.Size(270, 21);
             this.txtSN.TabIndex = 17;
-            this.txtSN.Text = "C4879398A1D000003";
             this.txtSN.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtSN_KeyUp);
             // 
             // BtnTest
