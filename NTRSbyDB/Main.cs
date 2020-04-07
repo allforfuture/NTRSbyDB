@@ -177,8 +177,8 @@ namespace NTRSbyDB
             //填满之后，清空
             object sender = new object { };
             if (sequence == NTRSbyDB.Layout.sum) { BtnClear_Click(sender, new EventArgs()); }
-            if (!sn.Contains("ERROR"))
-                sn = sn.Substring(0, 17);
+            //if (!sn.Contains("ERROR"))
+                //sn = sn.Substring(0, 17);
 
             string errMessage = "";
             if (!new CheckSN().IsPass(sn, ref errMessage))
@@ -339,9 +339,10 @@ namespace NTRSbyDB
         private void TxtSN_KeyUp(object sender, KeyEventArgs e)
         {
             //if (e.KeyCode == Keys.Return || txtSN.TextLength == 17)
-            if (txtSN.TextLength == 17)
+            //if (txtSN.TextLength == 17)
+            if (e.KeyCode == Keys.Return)
             {
-                if (txtSN.Text.Length < 17) { MessageBox.Show("马达号不是17位，请重新输入"); return; }
+                if (txtSN.Text.Length < 17) { MessageBox.Show("马达号不能少于17位，请重新输入"); return; }
                 string testPassword = new string(DateTime.Now.ToString("yyyyMMddHHmm").ToCharArray().Reverse().ToArray());
                 if (txtSN.Text == "TEST1" + testPassword)
                 { 设置ToolStripMenuItem.Visible = GrpTest.Visible = true; return; }

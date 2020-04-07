@@ -283,7 +283,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
-            this.Text = "NTRSbyDB";
+            this.Text = "NTRSbyDB_SpecialEdition";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.GrpTest.ResumeLayout(false);
