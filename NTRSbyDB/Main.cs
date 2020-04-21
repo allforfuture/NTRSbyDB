@@ -88,7 +88,7 @@ namespace NTRSbyDB
             int y = 0;
             foreach (string item in items)
             {
-                y += 40;
+                y += 35;
                 string[] detail = item.Split(',');
                 TextBox txt = new TextBox() { Size = new Size(245, 33) };
                 txt.Location = new Point(15, -15 + y);

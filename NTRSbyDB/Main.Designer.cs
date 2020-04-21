@@ -216,7 +216,7 @@
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
-            this.txtResult.Size = new System.Drawing.Size(270, 80);
+            this.txtResult.Size = new System.Drawing.Size(270, 60);
             this.txtResult.TabIndex = 33;
             this.txtResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -232,9 +232,9 @@
             // gbDetail
             // 
             this.gbDetail.Font = new System.Drawing.Font("微软雅黑", 14.25F);
-            this.gbDetail.Location = new System.Drawing.Point(4, 212);
+            this.gbDetail.Location = new System.Drawing.Point(4, 192);
             this.gbDetail.Name = "gbDetail";
-            this.gbDetail.Size = new System.Drawing.Size(270, 265);
+            this.gbDetail.Size = new System.Drawing.Size(270, 305);
             this.gbDetail.TabIndex = 33;
             this.gbDetail.TabStop = false;
             this.gbDetail.Text = "Detail:";
@@ -243,7 +243,7 @@
             // 
             this.lblMessage.AutoSize = true;
             this.lblMessage.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblMessage.Location = new System.Drawing.Point(6, 480);
+            this.lblMessage.Location = new System.Drawing.Point(6, 500);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(0, 21);
             this.lblMessage.TabIndex = 37;
